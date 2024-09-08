@@ -1,14 +1,11 @@
-from flask import Flask, jsonify, request
-from flask_cors import CORS
+from flask import Flask, jsonify
 
 app = Flask(__name__)
-CORS(app)  # Чтобы разрешить запросы с фронтенда
 
-# Пример простого API-эндпоинта
-@app.route('/api/hello', methods=['GET'])
-def hello():
-    return jsonify({"message": "Hello from Flask!"})
+# Простое API, которое возвращает данные
+@app.route('/api/data', methods=['GET'])
+def get_data():
+    return jsonify({"message": "Hello from backend!"})
 
-# Запуск сервера
 if __name__ == '__main__':
     app.run(debug=True)

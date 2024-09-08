@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend</title>
+</head>
+<body>
+    <h1>Frontend Part</h1>
+    <p id="backend-data"></p>
+
+    <script>
+        // Запрос к backend
+        fetch('http://127.0.0.1:5000/api/data')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("backend-data").textContent = data.message;
+        });
+    </script>
+</body>
+</html>
